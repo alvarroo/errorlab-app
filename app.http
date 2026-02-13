@@ -1,0 +1,52 @@
+### Obtener todos los pokémons
+GET http://localhost:3000/pokemons
+
+###
+
+### Obtener Turtwig por ID
+GET http://localhost:3000/pokemons/387
+
+###
+
+### Obtener Chimchar por ID
+GET http://localhost:3000/pokemons/390
+
+###
+
+### Obtener Piplup por ID
+GET http://localhost:3000/pokemons/393 
+
+###
+
+### Obtener pokémon por nombre - Turtwig
+GET http://localhost:3000/pokemons/nombre/Turtwig
+
+###
+
+### Obtener pokémon por nombre - Chimchar
+GET http://localhost:3000/pokemons/nombre/Chimchar
+
+###
+
+### Obtener pokémons de tipo Fuego
+GET http://localhost:3000/pokemons/tipo/Fuego
+
+###
+
+### Obtener pokémons de tipo Agua
+GET http://localhost:3000/pokemons/tipo/agua
+
+###
+
+### Obtener pokémons de tipo Planta
+GET http://localhost:3000/pokemons/tipo/planta
+
+###
+
+### Probar ruta no existente (404)
+GET http://localhost:3000/ruta-inventada
+
+###
+
+### Probar pokémon inexistente
+GET http://localhost:3000/pokemons/999
