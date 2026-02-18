@@ -1,45 +1,41 @@
+########################################
+### POKEMON API ENDPOINTS
+########################################
+
 ### Obtener todos los pokémons
-GET http://localhost:3000/pokemons
+GET http://localhost:3000/pokemon
 
 ###
 
-### Obtener Turtwig por ID
-GET http://localhost:3000/pokemons/387
+### Obtener Turtwig por ID (387)
+GET http://localhost:3000/pokemon/387
 
 ###
 
-### Obtener Chimchar por ID
-GET http://localhost:3000/pokemons/390
+###
+
+### Obtener pokémon por nombre - Piplup
+GET http://localhost:3000/pokemon/nombre/Piplup
 
 ###
 
-### Obtener Piplup por ID
-GET http://localhost:3000/pokemons/393 
-
-###
-
-### Obtener pokémon por nombre - Turtwig
-GET http://localhost:3000/pokemons/nombre/Turtwig
-
-###
-
-### Obtener pokémon por nombre - Chimchar
-GET http://localhost:3000/pokemons/nombre/Chimchar
-
-###
-
-### Obtener pokémons de tipo Fuego
-GET http://localhost:3000/pokemons/tipo/Fuego
+### Obtener pokémon por nombre inexistente (404)
+GET http://localhost:3000/pokemon/nombre/Mewtwo
 
 ###
 
 ### Obtener pokémons de tipo Agua
-GET http://localhost:3000/pokemons/tipo/agua
+GET http://localhost:3000/pokemon/tipo/Agua
 
 ###
 
-### Obtener pokémons de tipo Planta
-GET http://localhost:3000/pokemons/tipo/planta
+### Obtener pokémons de tipo inexistente (404)
+GET http://localhost:3000/pokemon/tipo/Electrico
+
+###
+
+### Root endpoint
+GET http://localhost:3000/
 
 ###
 
@@ -48,5 +44,119 @@ GET http://localhost:3000/ruta-inventada
 
 ###
 
-### Probar pokémon inexistente
-GET http://localhost:3000/pokemons/999
+########################################
+### BOOM - ERROR SIMULATION ENDPOINTS
+########################################
+
+### Lista todos los endpoints de error disponibles
+GET http://localhost:3000/boom/
+
+###
+
+### Health check - Estado del servidor
+GET http://localhost:3000/boom/health
+
+###
+
+### 1. APPLICATION_EXCEPTION - Error null pointer real
+GET http://localhost:3000/boom/exception
+
+###
+
+### 2. INPUT_VALIDATION - Validación sin parámetro (400)
+GET http://localhost:3000/boom/validation
+
+###
+
+### 2. INPUT_VALIDATION - Validación con ID no numérico (400)
+GET http://localhost:3000/boom/validation?id=abc
+
+###
+
+### 2. INPUT_VALIDATION - Validación con ID fuera de rango (400)
+GET http://localhost:3000/boom/validation?id=9999
+
+###
+
+### 2. INPUT_VALIDATION - Validación exitosa (200)
+GET http://localhost:3000/boom/validation?id=25
+
+###
+
+### 3. DEPENDENCY_FAILURE - API externa no disponible (503)
+GET http://localhost:3000/boom/dependency
+
+###
+
+### 4. TIMEOUT - Timeout con 3 segundos (504)
+GET http://localhost:3000/boom/timeout?ms=3000
+
+###
+
+### 4. TIMEOUT - Timeout con 5 segundos (504)
+GET http://localhost:3000/boom/timeout?ms=5000
+
+###
+
+### 5. DATABASE - Error de lectura de archivo (500)
+GET http://localhost:3000/boom/database
+
+###
+
+### 6. CONFIGURATION - Variables de entorno faltantes (500)
+GET http://localhost:3000/boom/config
+
+###
+
+### 7. AUTH_AUTHZ - Sin token de autorización (401)
+GET http://localhost:3000/boom/auth
+
+###
+
+### 7. AUTH_AUTHZ - Token con formato inválido (401)
+GET http://localhost:3000/boom/auth
+Authorization: InvalidToken123
+
+###
+
+### 7. AUTH_AUTHZ - Token Bearer inválido (401)
+GET http://localhost:3000/boom/auth
+Authorization: Bearer invalid-token
+
+###
+
+### 7. AUTH_AUTHZ - Token válido (200)
+GET http://localhost:3000/boom/auth
+Authorization: Bearer valid-secret-token
+
+###
+
+### 8. RESOURCE_CPU - Carga de CPU con 5M iteraciones
+GET http://localhost:3000/boom/cpu?iterations=5000000
+
+###
+
+### 8. RESOURCE_CPU - Carga de CPU con 10M iteraciones
+GET http://localhost:3000/boom/cpu?iterations=10000000
+
+###
+
+### 9. RESOURCE_MEMORY_OOM - Consumo de 50MB de memoria
+GET http://localhost:3000/boom/memory?mb=50
+
+###
+
+### 9. RESOURCE_MEMORY_OOM - Consumo de 100MB de memoria
+GET http://localhost:3000/boom/memory?mb=100
+
+###
+
+### 10. K8S_CRASHLOOP_RESTARTS - Crashea la aplicación (¡CUIDADO!)
+# GET http://localhost:3000/boom/crash
+
+###
+
+### 11. NETWORK_DNS_CONN - Error de resolución DNS (503)
+GET http://localhost:3000/boom/network
+
+###

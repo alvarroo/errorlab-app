@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: errorlab
+  title: ErrorLab
+  description: API de Pokémon con errores controlados para testing de análisis de logs con IA
+  annotations:
+    backstage.io/kubernetes-id: errorlab
+    backstage.io/kubernetes-namespace: errorlab-sandbox
+    backstage.io/kubernetes-label-selector: 'app=errorlab'
+spec:
+  type: service
+  lifecycle: experimental
+  owner: team-platform
+  system: pod-doctor

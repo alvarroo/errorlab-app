@@ -1,0 +1,23 @@
+[
+  {
+    "id": 387,
+    "nombre": "Turtwig",
+    "tipo": ["Planta"],
+    "descripcion": "Pokémon tortuga de tipo planta",
+    "hp": 55
+  },
+  {
+    "id": 390,
+    "nombre": "Chimchar",
+    "tipo": ["Fuego"],
+    "descripcion": "Pokémon chimpancé de tipo fuego",
+    "hp": 44
+  },
+  {
+    "id": 393,
+    "nombre": "Piplup",
+    "tipo": ["Agua"],
+    "descripcion": "Pokémon pingüino de tipo agua",
+    "hp": 53
+  }
+]
