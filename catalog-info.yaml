@@ -8,3 +8,7 @@ metadata:
     backstage.io/kubernetes-id: errorlab
     backstage.io/kubernetes-namespace: errorlab-sandbox
     backstage.io/kubernetes-label-selector: 'app=errorlab'
+spec:
+  type: service
+  lifecycle: experimental
+  owner: user:guest
