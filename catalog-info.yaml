@@ -8,6 +8,7 @@ metadata:
     backstage.io/kubernetes-id: errorlab
     backstage.io/kubernetes-namespace: errorlab-sandbox
     backstage.io/kubernetes-label-selector: 'app=errorlab'
+    prometheus.io/rule: 'pdoc_ai_analyses_total|result'
 spec:
   type: service
   lifecycle: experimental
